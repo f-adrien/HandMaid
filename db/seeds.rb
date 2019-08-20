@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "creating services..."
+
+Service.create(name: "Bedrooms")
+Service.create(name: "Bathrooms")
+Service.create(name: "Livingroom")
+Service.create(name: "Kitchen")
+Service.create(name: "Inside cabinets")
+Service.create(name: "Inside fridge")
+Service.create(name: "Inside oven")
+Service.create(name: "Laundry wash & dry")
+Service.create(name: "Ironing")
+Service.create(name: "Window cleaning")
+Service.create(name: "Outdoors")
+
+puts "Services created"
