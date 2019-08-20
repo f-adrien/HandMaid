@@ -1,0 +1,5 @@
+<h1>Choose your options</h1>
+<% simple_form_for @services do %>
+<%= f.select(:service_id, Service.all.collect {|u| [u.name, u.id]}, :prompt => 'Select') %>
+<% end %>
+<!-- CHECK RADIO BUTTON -->
