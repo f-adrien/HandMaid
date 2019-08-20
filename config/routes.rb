@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :registrations
+  devise_for :registrations, controllers:  {
+    registrations: "registrations"
+  }
 
   root to: 'pages#home'
 
