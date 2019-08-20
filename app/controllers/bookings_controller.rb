@@ -8,13 +8,19 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new()
+    @booking = Booking.new(strong_params_booking)
+    if @booking.save
+      redirect_to bookings_path
+    else
+      # render FORMCLEANER
+      redirect_to bookings_path
+    end
   end
 
   def destroy
-
+    @booking = Booking.find(params[:id])
+    @booking.destroy
   end
-
 
   private
 
