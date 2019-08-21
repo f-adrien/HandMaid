@@ -1,12 +1,29 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar-handmaid {
+color: black;
+background: white;
+padding: 10px 15px;
+top: 0;
+position: sticky;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: 0;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+
+.navbar-right-content ul {
+  margin: 0;
+  li {
+    margin-left: 15px;
+    font-size: 15px;
+    font-family: 'Karla', sans-serif;
+  }
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+
+.navbar-handmaid-logo {
+  margin: 0;
+  font-size: 15px;
+  font-weight: bolder;
+  font-family: 'Karla', sans-serif;
 }
