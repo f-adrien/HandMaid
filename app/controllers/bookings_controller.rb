@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @services = Service.all
     @booking = Booking.new
   end
 

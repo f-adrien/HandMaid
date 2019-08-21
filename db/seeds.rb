@@ -6,10 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Service.delete_all
+
 puts "creating services..."
 
-Service.create(name: "Bedrooms")
-Service.create(name: "Bathrooms")
+Service.create(name: "Bedroom")
+Service.create(name: "Bathroom")
 Service.create(name: "Livingroom")
 Service.create(name: "Kitchen")
 Service.create(name: "Inside cabinets")
