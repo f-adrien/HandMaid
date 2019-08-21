@@ -1,35 +1,69 @@
-<% if current_user.registration.user_type == "Cleaner"%>
-<h1>Cleaner Dashboard</h1>
-<h3>Hi <%= current_user.first_name %>!</h3>
-<% @bookings.each do |booking| %>
-<ul>
-  <li>Client: <%= booking.client.first_name %> <%= booking.client.last_name %></li>
-  <li>Date: <%= booking.date %></li>
-  <li>Location: <%= booking.address %></li>
-  <li>Income: €<%= booking.total_price %></li>
-</ul>
-<% end %>
+<div class="container">
+  <% if current_user.registration.user_type == "Cleaner"%>
+    <div class="banner-dashboard" style="background-image: url(<%= image_path 'cleaner-dashboard-bg.png' %>);">
+      <h1>Cleaner Dashboard</h1>
+    </div>
+    <h3>Hi <%= current_user.first_name %>!</h3>
+  <div class="card-booking">
+    <% @bookings.each do |booking| %>
+    <div class="card-content-up">
+      <ul class="list-inline">
+        <li>Booking ref. # <%= booking.id %></li>
+        <li>Client: <%= booking.client.first_name %> <%= booking.client.last_name %></li>
+        <li>Date: <%= booking.date %></li>
+        <li>Location: <%= booking.address %></li>
+          <% if booking.status %>
+        <li>Status: Confirmed <i class="fas fa-lock-open"></i></li>
+        <% else %>
+        <li>Status: Pending <i class="fas fa-lock"></i></li>
+        <% end %>
+      </ul>
+    </div>
+      <div class="card-content-down">
+        <h5>Total</h5>
+        <h5>€<%= booking.total_price %></h5>
+      </div>
+      <div class="card-booking-buttons">
+        <%= link_to 'REJECT', '/', class:'btn btn-ghost-card-booking' %>
+        <%= link_to 'ACCEPT', '/', class:'btn btn-primary-card-booking' %>
+      </div>
+      <% end %>
+    </div>
 
 
-<% elsif current_user.registration.user_type == "Client"%>
-<div class="banner-dashboard">
-<h1>Client Dashboard</h1>
+  <% elsif current_user.registration.user_type == "Client"%>
+    <div class="banner-dashboard" style="background-image: url(<%= image_path 'user-dashboard-bg.png' %>);">
+      <h1>Client Dashboard</h1>
+    </div>
+    <h3>Hi <%= current_user.first_name %>!</h3>
+  <div class="card-booking">
+    <% @bookings.each do |booking| %>
+    <div class="card-content-up">
+      <ul class="list-inline">
+        <li><i class="fas fa-info-circle"></i> Booking ref. # <%= booking.id %></li>
+        <li>Your cleaner will be <strong><%= booking.cleaner.first_name %></strong></li>
+        <li>Date: <%= booking.date %></li>
+        <li>Duration: <%= minute_to_hours(booking.total_duration)%></li>
+        <li>Location: <%= booking.address %></li>
+        <% if booking.status %>
+        <li>Status: Confirmed <i class="fas fa-lock-open"></i></li>
+        <% else %>
+        <li>Status: Pending <i class="fas fa-lock"></i></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="card-content-down">
+      <h5>Total</h5>
+      <h5>€<%= booking.total_price %></h5>
+    </div>
+    <div class="card-booking-buttons">
+      <%= link_to 'CANCEL', '/', class:'btn btn-ghost-card-booking' %>
+    </div>
+    <% end %>
+    <% end %>
+
+  </div>
+
 </div>
-<h3>Hi <%= current_user.first_name %>!</h3>
-<% @bookings.each do |booking| %>
-<ul>
-  <li>Your cleaner will be <%= booking.cleaner.first_name %></li>
-  <li>Date: <%= booking.date %></li>
-  <li>Duration: <%= minute_to_hours(booking.total_duration)%></li>
-  <li>Location: <%= booking.address %></li>
-  <% if booking.status %>
-  <li>Payment confirmed</li>
-  <% else %>
-  <li>Payment pending</li>
-  <% end %>
-  <li>Price: €<%= booking.total_price %></li>
-</ul>
-<% end %>
-<% end %>
 
 
