@@ -1,0 +1,30 @@
+.banner-dashboard {
+  background-size: cover;
+  h1 {
+    padding: 100px 0;
+    font-weight: bolder;
+  }
+}
+
+
+
+.card-booking-buttons {
+  text-align: right;
+}
+
+.btn-ghost-card-booking {
+  background-color: white;
+  border: 1px solid #E63F9A;
+  border-radius: 4px;
+  color: #E63F9A;
+  font-weight: bold;
+}
+
+.btn-primary-card-booking {
+  background-color: #E63F9A;
+  border: 1px solid white;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+
+}
