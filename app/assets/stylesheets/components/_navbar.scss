@@ -1,22 +1,26 @@
 .navbar-handmaid {
-color: black;
-background: white;
-padding: 10px 15px;
-top: 0;
-position: sticky;
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin: 0;
+  color: black;
+  background: white;
+  padding: 10px 15px;
+  top: 0;
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
 }
 
 
 .navbar-right-content ul {
   margin: 0;
   li {
-    margin-left: 15px;
-    font-size: 15px;
-    font-family: 'Karla', sans-serif;
+    font-family: Karla;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 15px;
+  color: #FFFFFF;
+  border-radius: 4px;
   }
 }
 

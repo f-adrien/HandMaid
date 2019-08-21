@@ -1,13 +1,25 @@
 
 
-<%= link_to "Register as a Client", new_registration_registration_path(user_type: "Client") %>
+<%#= link_to "Register as a Client", new_registration_registration_path(user_type: "Client") %>
 
-<%= link_to "Register as a Cleaner", new_registration_registration_path(user_type: "Cleaner") %>
+<%#= link_to "Register as a Cleaner", new_registration_registration_path(user_type: "Cleaner") %>
 
-<%= form_tag services_path, method: :get do %>
-<%= text_field_tag :location, params[:location], placeholder: "Find a location...", class: "form-control" %>
-<%= select_date(date = Date.current, options = {}, html_options = {}) %>
-<%= time_select("cleaner", "book_on", start_hour: 8,
-end_hour: 19, prompt: {hour: 'Choose hour', minute: 'Choose minute'}, :minute_step => 15) %>
-<%= submit_tag 'SEARCH', class: "btn-main" %>
-<% end %>
+
+  <div class="container" style="text-align:center">
+    <%= image_tag "banner-homepage.png", class: "image_banner" %>
+    <!-- <img src="/image/banner-homepage.png" alt=""> -->
+    <h3>Do your thing, chicken wing.</h3>
+    <p id="tagline">Book a cleaner now and do what you love with your time</p>
+  </div>
+
+  <div class="container">
+    <%= form_tag services_path, method: :get do %>
+    <%= text_field_tag :location, params[:location], placeholder: "Find a location...", class: "form-control" %>
+    <%= select_date(date = Date.current, options = {}, html_options = {}) %>
+    <%= time_select("cleaner", "book_on", start_hour: 8,
+    end_hour: 19, prompt: {hour: 'Choose hour', minute: 'Choose minute'}, :minute_step => 15) %>
+    <%= submit_tag 'SEARCH', class: "btn-main" %>
+    <% end %>
+
+  </div>
+
