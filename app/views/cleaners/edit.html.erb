@@ -1,16 +1,16 @@
 
 <div class="container">
 
-    <h1>Account</h1>
+    <h1 style="text-align: center;">Account</h1>
 
   <%= simple_form_for @cleaner do |f| %>
 
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :address %>
-  <%= f.input :radius, collection: 5..40 %>
+  <%= f.input :radius, collection: 5..40, required: false %>
   <%= f.input :phone_number %>
-
+  <%= f.submit "Submit", class: "btn-main" %>
   <% end %>
 </div>
 
