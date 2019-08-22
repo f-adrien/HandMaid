@@ -4,6 +4,7 @@ class CleanersController < ApplicationController
   end
 
   def update
+    @cleaner = Cleaner.find(params[:id])
     @cleaner.update(cleaner_params)
     redirect_to edit_cleaner_path(@cleaner)
   end

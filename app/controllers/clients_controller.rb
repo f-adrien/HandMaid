@@ -4,14 +4,14 @@ class ClientsController < ApplicationController
   end
 
   def update
+    @client = Client.find(params[:id])
     @client.update(client_params)
-    redirect_to edit_client_path(@client)
+    redirect_to bookings_path
   end
 
   private
 
   def client_params
-    params.require(:cleaner).permit(:first_name, :last_name, :address, :phone_number)
+    params.require(:client).permit(:first_name, :last_name, :address, :phone_number)
   end
 end
-
