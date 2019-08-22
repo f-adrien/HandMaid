@@ -16,8 +16,10 @@
 <div class="container d-flex justify-content-center">
   <div class = "form-width my-5">
     <%= form_tag services_path, method: :get do %>
-    <%= text_field_tag :location, params[:location], placeholder: "Find a location...", class: "form-control" %>
-    <%= select_date(date = Date.current, options = {}, html_options = {}) %>
+    <p> Where</p>
+    <%= text_field_tag :location, params[:location], placeholder: "Location", class: "form-control" %>
+    <p>When</p>
+    <%= text_field_tag :date, params[:date], as: :string, placeholder: "Pick date and time", class: "datepicker form-control" %>
     <%= time_select("cleaner", "book_on", start_hour: 8,
     end_hour: 19, prompt: {hour: 'Choose hour', minute: 'Choose minute'}, :minute_step => 15) %>
     <%= submit_tag 'SEARCH', class: "btn-main" %>
