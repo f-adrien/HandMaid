@@ -5,27 +5,30 @@
 <%#= link_to "Register as a Cleaner", new_registration_registration_path(user_type: "Cleaner") %>
 
 
-  <div class="container" style="text-align:center">
-    <%= image_tag "banner-homepage.png", class: "image_banner" %>
-    <!-- <img src="/image/banner-homepage.png" alt=""> -->
-    <h3>Do your thing, chicken wing.</h3>
-    <p id="tagline">Book a cleaner now and do what you love with your time</p>
-  </div>
+<div class="container" style="text-align:center">
+  <%= image_tag "banner-homepage.png", class: "image_banner" %>
+  <!-- <img src="/image/banner-homepage.png" alt=""> -->
+  <h3>Do your thing, chicken wing.</h3>
+  <p id="tagline">Book a cleaner now and do what you love with your time</p>
+</div>
 
 
-<div class="container d-flex justify-content-center">
-  <div class = "form-width my-5">
-    <%= form_tag services_path, method: :get do %>
+<div class="container">
+  <div class="card-home">
+    <%= form_tag new_booking_path, method: :get do %>
+
     <p> Where</p>
     <%= text_field_tag :location, params[:location], placeholder: "Location", class: "form-control" %>
+
     <p>When</p>
-    <%= text_field_tag :date, params[:date], as: :string, placeholder: "Pick date and time", class: "datepicker form-control" %>
-    <%= time_select("cleaner", "book_on", start_hour: 8,
-    end_hour: 19, prompt: {hour: 'Choose hour', minute: 'Choose minute'}, :minute_step => 15) %>
-    <%= submit_tag 'SEARCH', class: "btn-main" %>
+    <%= text_field_tag :date, params[:date], as: :string, placeholder: "Pick date and time", class: "datepicker" %>
+
+    <%= submit_tag 'SEARCH', class: "btn btn-main" %>
     <% end %>
 
+
   </div>
-  </div>
+
+</div>
 
 
