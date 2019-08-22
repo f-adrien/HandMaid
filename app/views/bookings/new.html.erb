@@ -1,13 +1,24 @@
-<h1>Choose your options</h1>
-<%= simple_form_for @booking do |f| %>
-<%#= f.select(:service_id, Service.all.collect {|u| [u.name, u.id]}, :prompt => 'Select') %>
-<%= f.input :total_duration, collection: 2.step(by: 0.5, to: 15).to_a.map{|n| "#{number_with_precision( n, strip_insignificant_zeros: true, precision: 2)} hours"} %>
+<div class="container">
+  <h1>Choose your options</h1>
+  <%= simple_form_for @booking do |f| %>
+  <%#= f.select(:service_id, Service.all.collect {|u| [u.name, u.id]}, :prompt => 'Select') %>
+  <%= f.input :total_duration, collection: 2.step(by: 0.5, to: 15).to_a.map{|n| "#{number_with_precision( n, strip_insignificant_zeros: true, precision: 2)} hours"} %>
   <% @services.each do |service| %>
-    <div class="form-check">
-      <input type="checkbox" hidden value="<%= service.id %>" name="booking[services][]" id="booking_services_<%= service.id %>">
-      <label class="collection_check_boxes service" for="booking_services_<%= service.id %>"><%= show_svg("#{service.name}.svg") %></label>
-    </div>
+  <div class="form-check">
+    <input type="checkbox" hidden value="<%= service.id %>" name="booking[services][]" id="booking_services_<%= service.id %>">
+    <label class=" service" for="booking_services_<%= service.id %>">
+      <div class="services-icons">
+        <%= show_svg("#{service.name}.svg") %>
+      </div>
+    </label>
+  </div>
   <% end %>
-  <%= f.submit %>
-<% end %>
-
+  <div>
+    <%= f.input :address %>
+  </div>
+  <input type="text">
+  <div>
+    <%= f.submit %>
+  </div>
+  <% end %>
+</div>
