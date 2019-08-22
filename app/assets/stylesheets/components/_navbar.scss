@@ -1,12 +1,33 @@
-.navbar-lewagon {
-  justify-content: space-between;
+.navbar-handmaid {
+  color: black;
   background: white;
+  padding: 10px 15px;
+  top: 0;
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+
+.navbar-right-content ul {
+  margin: 0;
+  li {
+    font-family: Karla;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 15px;
+  color: #FFFFFF;
+  border-radius: 4px;
+  }
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+
+.navbar-handmaid-logo {
+  margin: 0;
+  font-size: 15px;
+  font-weight: bolder;
+  font-family: 'Karla', sans-serif;
 }

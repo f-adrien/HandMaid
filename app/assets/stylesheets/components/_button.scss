@@ -1,0 +1,82 @@
+.btn-main {
+  background-color: #4100FF;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Karla";
+  font-size: 18px;
+  padding: 15px 15px;
+  border-radius: 4px;
+  border: 0;
+  width: 100%;
+  margin-top: 35px;
+  &:hover.btn-main {
+    background-color: #2F00C3;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.btn-main-ghost {
+  background-color: white;
+  color: #4100FF;
+  font-family: "Karla";
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  border: 0;
+  border: 1px solid #4100FF;
+  width: 100%;
+  margin-top: 10px;
+  &:hover.btn-main-ghost {
+    background-color: #4100FF;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.btn-small {
+  background-color: #4100FF;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Karla";
+  font-size: 18px;
+  padding: 15px 15px;
+  border-radius: 4px;
+  border: 0;
+  width: 45%;
+  align: right;
+  &:hover.btn-small {
+    background-color: #2F00C3;
+    text-decoration: none;
+    color: white;
+  }
+
+}
+
+.btn-small-ghost {
+  background-color: white;
+  color: #E63F9A;
+  font-family: "Karla";
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  border: 0;
+  border: 1px solid #E63F9A;
+  width: 45%;
+  margin-top: 10px;
+  &:hover.btn-main-ghost {
+    background-color: #E63F9A;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+
