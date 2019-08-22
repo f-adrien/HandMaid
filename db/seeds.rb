@@ -39,7 +39,11 @@ Registration.create(email: "damianmarley@gmail.com", password: "password", user_
 puts "registrations created"
 
 puts "creating a booking"
+<<<<<<< HEAD
+Booking.create(date: "", total_duration: 200, client_id: 1, cleaner_id: 1, total_price: 50, payment_status: false, cleaner_status: false, address: "2 Avenue des Champs Elysées")
+=======
 Booking.create(date: "", total_duration: 200, client_id: 1, cleaner_id: 1, price_cents: 500, payment_status: false,cleaner_status: false, address: "2 Avenue des Champs Elysées")
+>>>>>>> 7898fb9771bb355bc57461c6393b008e8c8b68c3
 puts "booking created"
 
 

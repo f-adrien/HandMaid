@@ -8,8 +8,8 @@
   justify-content: space-between;
   align-items: center;
   margin: 0;
-}
 
+}
 
 .navbar-right-content ul {
   margin: 0;
@@ -22,6 +22,10 @@
   color: #FFFFFF;
   border-radius: 4px;
   }
+  a {
+    text-decoration: none;
+    color: #FFFFFF;
+  }
 }
 
 
@@ -30,4 +34,9 @@
   font-size: 15px;
   font-weight: bolder;
   font-family: 'Karla', sans-serif;
+  text-decoration: none;
+   a {
+    text-decoration: none;
+    color: black;
+  }
 }

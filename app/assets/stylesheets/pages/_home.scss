@@ -1,6 +1,7 @@
 .card-home {
   p {
     margin: 10px 0px;
+    font-weight: bold;
 
   }
 }
@@ -13,4 +14,11 @@
 
 .form-control { //chaning the height of the input field
   height: 54px;
+}
+
+
+.card-signup {
+  p {
+    margin-top: 10px;
+  }
 }
