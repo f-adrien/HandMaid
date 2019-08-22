@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   resources :bookings, except: [:edit, :update]
   resources :services, except: [:show]
+  resources :cleaners, only: [:edit, :update]
+  resources :clients, only: [:edit, :update]
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
