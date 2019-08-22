@@ -1,0 +1,14 @@
+
+<div class="container">
+
+    <h1 style="text-align: center;">Account</h1>
+
+  <%= simple_form_for @client do |f| %>
+
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :address %>
+  <%= f.input :phone_number %>
+  <%= f.submit "Submit", class: "btn-main" %>
+  <% end %>
+</div>
