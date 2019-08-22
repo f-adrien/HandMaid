@@ -13,7 +13,7 @@ const clicker = () => {
       const input = document.getElementById(event.currentTarget.htmlFor)
       input.checked = !input.checked
       input.click();
-      service.classList.toggle("btn-primary")
+      service.classList.toggle("services-icons-checked")
     })
   })
 }
