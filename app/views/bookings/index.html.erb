@@ -12,7 +12,7 @@
         <li>Client: <%= booking.client.first_name %> <%= booking.client.last_name %></li>
         <li>Date: <%= booking.date %></li>
         <li>Location: <%= booking.address %></li>
-          <% if booking.status %>
+          <% if booking.cleaner_status %>
         <li>Status: Confirmed <i class="fas fa-lock-open"></i></li>
         <% else %>
         <li>Status: Pending <i class="fas fa-lock"></i></li>
@@ -45,7 +45,7 @@
         <li>Date: <%= booking.date %></li>
         <li>Duration: <%= minute_to_hours(booking.total_duration)%></li>
         <li>Location: <%= booking.address %></li>
-        <% if booking.status %>
+        <% if booking.cleaner_status %>
         <li>Status: Confirmed <i class="fas fa-lock-open"></i></li>
         <% else %>
         <li>Status: Pending <i class="fas fa-lock"></i></li>
