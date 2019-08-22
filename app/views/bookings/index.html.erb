@@ -21,7 +21,7 @@
     </div>
       <div class="card-content-down">
         <h5>Total</h5>
-        <h5>€<%= booking.total_price %></h5>
+        <h5><%= humanized_money_with_symbol(booking.price)%></h5>
       </div>
       <div class="card-booking-buttons">
         <%= link_to 'REJECT', '/', class:'btn btn-ghost-card-booking' %>
@@ -54,7 +54,7 @@
     </div>
     <div class="card-content-down">
       <h5>Total</h5>
-      <h5>€<%= booking.total_price %></h5>
+      <h5><%= humanized_money_with_symbol(booking.price)%></h5>
     </div>
     <div class="card-booking-buttons">
       <%= link_to 'CANCEL', '/', class:'btn btn-ghost-card-booking' %>
