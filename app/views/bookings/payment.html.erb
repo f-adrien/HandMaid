@@ -1,0 +1,48 @@
+<div class="container">
+  <h1>Checkout</h1>
+  <div class="card p-2">
+    <div class="booking-description">
+      <div>
+        Duration: <%= @booking.total_duration %> hours
+      </div>
+      <div>
+        <p>Priorities:</p>
+        <% @booking.services.each do |service| %>
+        <div class="services-icons mr-3">
+          <%= show_svg("#{service.name}.svg")  %>
+          <%#= service.name  %>
+        </div>
+        <% end %>
+      </div>
+      <div>
+        Total price: <%= @booking.price_cents %> €
+      </div>
+    </div>
+  </div>
+  <div>
+   <label class=" service" for="">
+    Name on card
+  </label>
+  <input type="text" value="Abs" name="credit card number">
+</div>
+<div>
+  <label class=" service" for="">
+    Credit Card number
+  </label>
+  <input type="text" value="1111 1111 1111 1111" name="credit card number">
+</div>
+<div>
+  <label class=" service" for="">
+    Expiration
+  </label>
+  <input type="number" value="1111 1111 1111 1111%>" name="credit card number">
+</div>
+<div>
+  <label class=" service" for="">
+    CVV
+  </label>
+  <input type="number" value="1111 1111 1111 1111%>" name="credit card number">
+</div>
+<div class="mt-2">
+  <%= link_to "Pay now", root_path, class: "btn btn-primary" %>
+</div>
