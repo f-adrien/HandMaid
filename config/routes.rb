@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :services, except: [:show]
   resources :cleaners, only: [:edit, :update]
   resources :clients, only: [:edit, :update]
+  resources :requests, only: [:show, :edit, :update]
 
   get 'bookings/:id/payment', to: 'bookings#payment', as: :booking_payment
 
