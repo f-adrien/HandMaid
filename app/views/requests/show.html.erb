@@ -1,0 +1,35 @@
+<div class="container text-center">
+  <%# if @booking.status == "pending" %>
+    <h1 class="title">Request pending</h1>
+    <div>
+      <%= image_tag "Scene Whiteboard.png", class: "image_request_pending" %>
+    </div>
+    <div>
+      <%= image_tag "hourglass icon.png", class: "icon_request_pending" %>
+    </div>
+    <div>
+      <h3 class="subtitle">Waiting for available cleaner</h3>
+    </div>
+    <div class ="customer_support">
+      <p>Customer support</p>
+      <p>Visit Help Center - Contact HANDMAID</p>
+    </div>
+    <button class="btn-main">CANCEL</button>
+  <% #else %>
+    <!-- <h1 class="title">Request accepted</h1>
+    <div>
+      <%#= image_tag "Scene Whiteboard.png", class: "image_request_pending" %>
+    </div>
+    <div>
+      <%#= image_tag "hourglass icon.png", class: "icon_request_pending" %>
+    </div>
+    <div>
+      <h3 class="subtitle"><%#= @cleaner.name %> is coming in 2hrs.</h3>
+    </div>
+    <div class ="customer_support">
+      <p>Customer support</p>
+      <p>Visit Help Center - Contact HANDMAID</p>
+    </div>
+    <button class="btn-main">CONTACT</button>
+  <%# end %> -->
+</div>
