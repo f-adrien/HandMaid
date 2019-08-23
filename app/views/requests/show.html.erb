@@ -14,14 +14,14 @@
       <p>Customer support</p>
       <p>Visit Help Center - Contact HANDMAID</p>
     </div>
-    <button class="btn-main-ghost">CANCEL</button>
-  <% #else %>
-    <h1 class="title">Request accepted</h1>
+    <%= link_to "CANCEL", root_path, class: "btn btn-main-ghost btn-block" %>
+  <%# #else %>
+    <!-- <h1 class="title">Request accepted</h1>
     <div>
-      <%= image_tag "accept-page.png", class: "image_request_accepted" %>
+      <%#= image_tag "accept-page.png", class: "image_request_accepted" %>
     </div>
     <div>
-      <%= image_tag "tick icon.png", class: "icon_request_accepted" %>
+      <%#= image_tag "tick icon.png", class: "icon_request_accepted" %>
     </div>
     <div>
       <h3 class="subtitle">Cleaner is coming in 2hrs.</h3>
@@ -32,4 +32,4 @@
     </div>
     <button class="btn-main">CONTACT</button>
   <%# end %>
-</div>
+</div> -->
