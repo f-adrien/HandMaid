@@ -1,11 +1,12 @@
 class BookingsController < ApplicationController
 
+  before_action :find_booking, only: [:show, :payment]
+
   def index
     @bookings = current_user.bookings
   end
 
   def show
-    @booking = Booking.find(params[:id])
   end
 
   def new
@@ -16,16 +17,16 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(strong_params_booking)
     @booking.date = DateTime.parse(params[:booking][:date])
-    @booking.total_price = params[:booking][:total_duration] * 10
-    @booking.client_id = 1
+    @booking.price_cents = params[:booking][:total_duration].to_i * 10
+    @booking.client_id = current_user.id
     if @booking.save
       params[:booking][:services].each do |service_id|
         BookingService.create(service_id: service_id, booking_id: @booking.id)
       end
-      redirect_to bookings_path
+      redirect_to booking_payment_path(@booking)
     else
       # render FORMCLEANER
-      redirect_to bookings_path
+      redirect_to booking_payment_path(@booking)
     end
   end
 
@@ -34,7 +35,14 @@ class BookingsController < ApplicationController
     @booking.destroy
   end
 
+  def payment
+  end
+
   private
+
+  def find_booking
+    @booking = Booking.find(params[:id])
+  end
 
   def strong_params_booking
     params.require(:booking).permit(:total_duration, :address)
