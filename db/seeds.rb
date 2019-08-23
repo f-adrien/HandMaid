@@ -42,6 +42,7 @@ puts "creating a booking"
 
 Booking.create(date: "", total_duration: 200, client_id: 1, cleaner_id: 1, price_cents: 50, payment_status: false, cleaner_status: false, address: "2 Avenue des Champs Elysées")
 
+
 puts "booking created"
 
 

@@ -3,7 +3,11 @@
 
   <div class="navbar-right-content">
     <ul class="list-inline">
+      <% if user_signed_in? %>
+      <li class="list-inline-item btn btn-logout" ><%= link_to 'LOG OUT', destroy_registration_session_path, method: :delete %> </li>
+       <% else %>
       <li class="list-inline-item btn btn-primary" ><%= link_to 'LOG IN', new_registration_session_path %> </li>
+      <% end %>
     </ul>
   </div>
 </div>
