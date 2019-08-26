@@ -6,7 +6,7 @@ class CleanersController < ApplicationController
   def update
     @cleaner = Cleaner.find(params[:id])
     @cleaner.update(cleaner_params)
-    redirect_to edit_cleaner_path(@cleaner)
+    redirect_to bookings_path
   end
 
   private
