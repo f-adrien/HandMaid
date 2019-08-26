@@ -3,32 +3,34 @@
   <%= simple_form_for @booking do |f| %>
   <%#= f.select(:service_id, Service.all.collect {|u| [u.name, u.id]}, :prompt => 'Select') %>
   <%= f.input :total_duration, collection: 2.step(by: 0.5, to: 15).to_a.map{|n| ["#{number_with_precision( n, strip_insignificant_zeros: true, precision: 2)} hours", n]} %>
-<div class="cards-service">
-<div class="card-service">
-  <% @services.each do |service| %>
-  <div class="form-check">
-    <input type="checkbox" hidden value="<%= service.id %>" name="booking[services][]" id="booking_services_<%= service.id %>">
-    <label class=" service" for="booking_services_<%= service.id %>">
-      <div class="services-icons" >
-        <%= show_svg("#{service.name}.svg") %>
+  <div class="container">
+    <div class="cards-service">
+      <% @services.each do |service| %>
+      <div class="card-service">
+        <div class="form-check">
+          <input type="checkbox" hidden value="<%= service.id %>" name="booking[services][]" id="booking_services_<%= service.id %>">
+          <div class="service">
+            <label class=" service" for="booking_services_<%= service.id %>">
+              <div class="services-icons" >
+                <%= show_svg("#{service.name}.svg")%>
+              </div>
+              <p><%= service.name %></p>
+            </label>
+
+          </div>
+        </div>
       </div>
-      <p><%= service.name %></p>
-    </label>
+      <% end %>
+
+    </div>
+    <br>
+    <%= f.input :address%>
   </div>
-  <% end %>
-  <div>
-
-</div>
-
-</div>
-
-    <%= f.input :address %>
-  </div>
-    <%#= f.input :date, as: :date, value: params[:date] %>
+  <%#= f.input :date, as: :date, value: params[:date] %>
 
   <input type="text" hidden value="<%= params[:date]%>" name="booking[date]">
   <div>
     <%= f.submit class:"btn btn-primary btn-block"%>
   </div>
 </div>
-  <% end %>
+<% end %>
