@@ -1,2 +1,61 @@
-<h1>Cleaners::Bookings#index</h1>
-<p>Find me in app/views/cleaners/bookings/index.html.erb</p>
+<div class="container">
+    <div class="banner-dashboard" style="background-image: url(<%= image_path 'user-dashboard-bg.png' %>);">
+      <h1>Client Dashboard</h1>
+    </div>
+    <h3>Hi <%= current_user.first_name %>!</h3>
+  <!-- Display pending bookings in area -->
+
+  <% @bookings_near.each do |booking| %>
+    <% if booking.cleaner_status == nil %>
+      <div class="card-content-up">
+      <ul class="list-inline">
+        <li><i class="fas fa-info-circle"></i> New request near you !</li>
+        <li>Date: <%= booking.date %></li>
+        <li>Duration: <%= minute_to_hours(booking.total_duration)%></li>
+        <li>Location: <%= booking.address %></li>
+        <li>Distance from home: <%= Geocoder::Calculations.distance_between(current_user.address, booking.address).round(2) %> kms </li>
+        <% if booking.cleaner_status %>
+        <li>Status: Confirmed <i class="fas fa-lock-open"></i></li>
+        <% else %>
+        <li>Status: Pending <i class="fas fa-lock"></i></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="card-content-down">
+      <h5>Total</h5>
+      <h5><%= humanized_money_with_symbol(booking.price)%></h5>
+    </div>
+    <div class="card-booking-buttons">
+      <%= link_to 'CANCEL', '/', class:'btn btn-ghost-card-booking' %>
+    </div>
+    <% end %>
+   <% end  %>
+
+
+  <!-- Display current and past bookings -->
+  <div class="card-booking">
+    <% @bookings.each do |booking| %>
+    <div class="card-content-up">
+      <ul class="list-inline">
+        <li><i class="fas fa-info-circle"></i> Booking ref. # <%= booking.id %></li>
+        <li>Date: <%= booking.date %></li>
+        <li>Duration: <%= minute_to_hours(booking.total_duration)%></li>
+        <li>Location: <%= booking.address %></li>
+        <% if booking.cleaner_status %>
+        <li>Status: Confirmed <i class="fas fa-lock-open"></i></li>
+        <% else %>
+        <li>Status: Pending <i class="fas fa-lock"></i></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="card-content-down">
+      <h5>Total</h5>
+      <h5><%= humanized_money_with_symbol(booking.price)%></h5>
+    </div>
+    <div class="card-booking-buttons">
+      <%= link_to 'CANCEL', '/', class:'btn btn-ghost-card-booking' %>
+    </div>
+    <% end %>
+  </div>
+</div>
+

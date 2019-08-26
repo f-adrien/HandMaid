@@ -10,4 +10,8 @@ module ApplicationHelper
     # current_user.class == "Cleaner"
   end
 
+  def is_pending?
+    @booking.cleaner_status == nil
+  end
+
 end
