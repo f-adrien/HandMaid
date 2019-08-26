@@ -1,26 +1,63 @@
 <div class="container">
-  <h1>Checkout</h1>
+  <h5 style="text-align: center; margin: 0;">Payment</h5>
   <div class="card p-2">
     <div class="booking-description">
       <div>
         Duration: <%= @booking.total_duration %> hours
       </div>
       <div>
-        <p>Priorities:</p>
+        <p style="margin: 0">Priorities:</p>
         <% @booking.services.each do |service| %>
-        <div class="services-icons mr-3">
+        <div class="priorities-payment">
           <%= show_svg("#{service.name}.svg")  %>
           <%#= service.name  %>
         </div>
         <% end %>
       </div>
-      <div>
-        Total price: <%= @booking.price_cents %> €
-      </div>
+
+
     </div>
+    <br>
   </div>
+        Total price: €<%= @booking.price_cents %>
   <div>
-   <label class=" service" for="">
+  <br>
+
+  <h6 style="margin: 0;">Payment Method</h6>
+
+  <div class="payment-icons">
+   <i class=" icon fab fa-cc-visa"></i>
+   <i class=" icon fab fa-cc-amex"></i>
+   <i class=" icon fab fa-cc-mastercard"></i>
+  </div>
+  <br>
+<div class="payment">
+<div class="card-info">
+<i class="fas fa-credit-card"></i>
+</div>
+<br>
+<div class="iconspayment">
+  <i class="fas fa-calendar-alt"></i>
+</div>
+<br>
+<div class="iconspayment">
+  <i class="fas fa-lock"></i>
+</div>
+<br>
+
+</div>
+<br>
+
+
+  <%= link_to "PAY NOW", request_path, class: "btn btn-primary btn-block" %>
+
+
+
+
+
+
+
+<!--    <label class=" service" for="">
     Name on card
   </label>
   <input type="text" value="Abs" name="credit card number">
@@ -44,5 +81,4 @@
   <input type="number" value="1111 1111 1111 1111%>" name="credit card number">
 </div>
 <div class="mt-2">
-  <%= link_to "Pay now", request_path, class: "btn btn-primary" %>
-</div>
+</div> -->
