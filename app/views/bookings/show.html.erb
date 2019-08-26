@@ -1,4 +1,28 @@
 <div class="container">
+
+<!-- While request is pending -->
+<% if @booking.cleaner_status == nil %>
+<div class="container text-center">
+    <h1 class="title">Request pending</h1>
+    <div>
+      <%= image_tag "Scene Whiteboard.png", class: "image_request_pending" %>
+    </div>
+    <div>
+      <%= image_tag "hourglass icon.png", class: "icon_request_pending" %>
+    </div>
+    <div>
+      <h3 class="subtitle">Waiting for available cleaner</h3>
+    </div>
+    <div class ="customer_support">
+      <p>Customer support</p>
+      <p>Visit Help Center - Contact HANDMAID</p>
+    </div>
+    <%= link_to "CANCEL", root_path, class: "btn btn-main-ghost btn-block" %>
+
+
+<!-- When cleaner acceptes request  -->
+<% else %>
+
 <div class="banner-booking-show" style="background-image: url(<%= image_path 'user-dashboard-bg.png' %>);">
   <h1> Order summary</h1>
 </div>
@@ -31,5 +55,5 @@
     <% end %>
   </ul>
 <%= link_to 'PAY', "/", class:"btn btn-primary-purple btn-block" %>
-
+<% end %>
 </div>
