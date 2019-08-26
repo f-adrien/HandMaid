@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :registrations, controllers:  {
     registrations: "registrations"
   }
@@ -6,6 +7,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :bookings, except: [:edit, :update]
+
+  namespace :cleaners do
+    resources :bookings, only: [:index, :show]
+  end
+
   resources :services, except: [:show]
   resources :cleaners, only: [:edit, :update]
   resources :clients, only: [:edit, :update]
