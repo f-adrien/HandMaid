@@ -1,0 +1,45 @@
+.priorities-payment {
+
+  width: 50px;
+  height: 50px;
+
+  grid: grid;
+  display: inline-block;
+  border: 1px solid black;
+  padding: 3px;
+  margin-bottom: 5px;
+
+}
+
+.payment-icons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.icon {
+  font-size: 80px;
+}
+
+.fa-cc-visa {
+  color: blue;
+}
+
+.fa-credit-card {
+  font-size: 20px;
+}
+
+
+
+.card-info {
+  border-bottom: 1px gray solid;
+
+}
+
+.iconspayment {
+  border-bottom: 1px gray solid;
+}
+
+.payment {
+  margin: 0 auto;
+  width: 350px;
+}
