@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_22_153502) do
+ActiveRecord::Schema.define(version: 2019_08_26_134915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 2019_08_22_153502) do
     t.datetime "updated_at", null: false
     t.boolean "payment_status"
     t.integer "price_cents", default: 0, null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["cleaner_id"], name: "index_bookings_on_cleaner_id"
     t.index ["client_id"], name: "index_bookings_on_client_id"
   end
@@ -48,6 +50,8 @@ ActiveRecord::Schema.define(version: 2019_08_22_153502) do
     t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "clients", force: :cascade do |t|
