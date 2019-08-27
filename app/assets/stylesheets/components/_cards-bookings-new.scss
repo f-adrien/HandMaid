@@ -7,21 +7,11 @@
   // grid-template-columns: 1fr;
   // align-items: baseline;
   margin-top: 4px;
-  width: 100%;
+  width: 120px;
+  height: 90px;
   padding: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // display: flex;
-  // flex-wrap: wrap;
-  // border: 1px solid black;
-  // padding: 15px;
-    p {
-      margin: 0;
-      padding: 0;
-    }
+  text-align: center;
 }
-
 .form-check {
   padding: 0;
 }
@@ -29,3 +19,10 @@
 .services-icons {
   margin: 0 auto;
 }
+
+.cards-service {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
