@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_134915) do
+ActiveRecord::Schema.define(version: 2019_08_27_105258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "booking_rejections", force: :cascade do |t|
+    t.bigint "booking_id"
+    t.bigint "cleaner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_booking_rejections_on_booking_id"
+    t.index ["cleaner_id"], name: "index_booking_rejections_on_cleaner_id"
+  end
 
   create_table "booking_services", force: :cascade do |t|
     t.bigint "service_id"
@@ -27,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_08_26_134915) do
   create_table "bookings", force: :cascade do |t|
     t.datetime "date"
     t.integer "total_duration"
-    t.boolean "cleaner_status"
+    t.string "status", default: "pending"
     t.string "address"
     t.bigint "client_id"
     t.bigint "cleaner_id"
@@ -101,6 +110,8 @@ ActiveRecord::Schema.define(version: 2019_08_26_134915) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "booking_rejections", "bookings"
+  add_foreign_key "booking_rejections", "cleaners"
   add_foreign_key "booking_services", "bookings"
   add_foreign_key "booking_services", "services"
   add_foreign_key "bookings", "cleaners"

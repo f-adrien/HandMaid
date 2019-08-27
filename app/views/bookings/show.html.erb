@@ -1,7 +1,7 @@
 <div class="container">
 
 <!-- While request is pending -->
-<% if @booking.cleaner_status == nil %>
+<% if @booking.status == "pending" %>
 <div class="container text-center">
     <h1 class="title">Request pending</h1>
     <div>
@@ -33,7 +33,7 @@
     <li>Date: <%= @booking.date %></li>
     <li>Duration: <%= minute_to_hours(@booking.total_duration)%></li>
     <li>Location: <%= @booking.address %></li>
-    <% if @booking.cleaner_status %>
+    <% if @booking.status %>
     <li>Status: Confirmed <i class="fas fa-lock-open"></i></li>
     <% else %>
     <li>Status: Pending <i class="fas fa-lock"></i></li>
@@ -48,7 +48,7 @@
     <li>Date: <%= @booking.date %></li>
     <li>Duration: <%= minute_to_hours(@booking.total_duration)%></li>
     <li>Location: <%= @booking.address %></li>
-    <% if @booking.cleaner_status %>
+    <% if @booking.status %>
     <li>Status: Confirmed <i class="fas fa-lock-open"></i></li>
     <% else %>
     <li>Status: Pending <i class="fas fa-lock"></i></li>
