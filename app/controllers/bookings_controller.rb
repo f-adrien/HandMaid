@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(strong_params_booking)
     @booking.date = DateTime.parse(params[:booking][:date])
-    @booking.price_cents = params[:booking][:total_duration].to_i * 10
+    @booking.price_cents = params[:booking][:total_duration].to_i * 10 * 100
     @booking.client_id = current_user.id
     if @booking.save
       params[:booking][:services].each do |service_id|

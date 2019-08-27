@@ -1,14 +1,15 @@
 <div class="navbar-handmaid">
   <p class="navbar-handmaid-logo"><%= link_to 'HANDMAID', root_path %></p>
 
+<!-- Navbar when user is signed in -->
   <div class="navbar-right-content">
     <ul class="list-inline">
       <li class="list-inline-item dropdown">
         <%= image_tag "menu.png", class: "avatar-square dropdown-toggle", data: { toggle: "dropdown" } %>
       <% if user_signed_in? %>
         <div class="dropdown-menu dropdown-menu-right">
-          <%= link_to "Register as client", edit_client_path(current_user), class: "dropdown-item" %>
-          <%= link_to "Register as cleaner", edit_cleaner_path(current_user), class: "dropdown-item" %>
+          <%= link_to "Register as client", new_registration_registration_path(user_type: "Client"), class: "dropdown-item" %>
+          <%= link_to "Register as cleaner", new_registration_registration_path(user_type: "Cleaner"), class: "dropdown-item" %>
           <%= link_to 'Log out', destroy_registration_session_path, method: :delete, class: "dropdown-item" %>
         </div>
       </li>
@@ -21,9 +22,3 @@
     </ul>
   </div>
 </div>
-
-
-
-
-
-
