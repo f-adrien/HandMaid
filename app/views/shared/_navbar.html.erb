@@ -1,6 +1,7 @@
 <div class="navbar-handmaid">
 <p class="navbar-handmaid-logo"><%= link_to 'HANDMAID', root_path %></p>
 
+<!-- Navbar when user is signed in -->
   <div class="navbar-right-content">
     <ul class="list-inline">
       <% if user_signed_in? %>
@@ -9,19 +10,20 @@
       <li class="list-inline-item dropdown">
         <%= image_tag "menu.png", class: "avatar-square dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" } %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Register as client", edit_client_path(current_user), class: "nav-link" %>
-          <%= link_to "Register as cleaner", edit_cleaner_path(current_user), class: "dropdown-item" %>
+          <%= link_to "Register as client", new_registration_registration_path(user_type: "Client"), class: "nav-link" %>
+          <%= link_to "Register as cleaner", new_registration_registration_path(user_type: "Cleaner"), class: "dropdown-item" %>
         </div>
       </li>
 
+<!-- Navbar when user is not signed in -->
        <% else %>
       <li id= "login" class="list-inline-item btn btn-primary" ><%= link_to 'LOG IN', new_registration_session_path %> </li>
 
       <li class="list-inline-item dropdown">
         <%= image_tag "menu.png", class: "avatar-square dropdown-toggle", data: { toggle: "dropdown" } %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Register as client", "", class: "dropdown-item" %>
-          <%= link_to "Register as cleaner", "#", class: "dropdown-item" %>
+          <%= link_to "Register as client", new_registration_registration_path(user_type: "Client"), class: "dropdown-item" %>
+          <%= link_to "Register as cleaner", new_registration_registration_path(user_type: "Cleaner"), class: "dropdown-item" %>
         </div>
       </li>
       <% end %>
