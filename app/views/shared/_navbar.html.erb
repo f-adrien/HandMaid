@@ -5,17 +5,22 @@
     <ul class="list-inline">
       <li class="list-inline-item dropdown">
         <%= image_tag "menu.png", class: "avatar-square dropdown-toggle", data: { toggle: "dropdown" } %>
-      <% if user_signed_in? %>
+        <% if user_signed_in? %>
         <div class="dropdown-menu dropdown-menu-right">
-          <%= link_to "Register as client", edit_client_path(current_user), class: "dropdown-item" %>
-          <%= link_to "Register as cleaner", edit_cleaner_path(current_user), class: "dropdown-item" %>
+          <% if current_registration.user_type == "Client" %>
+            <%= link_to 'My Bookings', bookings_path, class: "dropdown-item" %>
+              <% elsif current_registration.user_type == "Cleaner" %>
+            <%= link_to 'My Bookings', cleaners_bookings_path, class: "dropdown-item" %>
+          <% end %>
           <%= link_to 'Log out', destroy_registration_session_path, method: :delete, class: "dropdown-item" %>
         </div>
       </li>
       <% else %>
         <div class="dropdown-menu dropdown-menu-right">
           <%= link_to 'Log in', new_registration_session_path, class: "dropdown-item" %>
-        </div> -->
+          <%= link_to "Sign up as client", new_registration_registration_path(user_type: "Client"), class: "dropdown-item" %>
+          <%= link_to "Sign up as cleaner", new_registration_registration_path(user_type: "Cleaner"), class: "dropdown-item" %>
+        </div>
       </li>
       <% end %>
     </ul>
