@@ -1,6 +1,7 @@
 <div class="navbar-handmaid">
   <p class="navbar-handmaid-logo"><%= link_to 'HANDMAID', root_path %></p>
 
+<!-- Navbar when user is signed in -->
   <div class="navbar-right-content">
     <ul class="list-inline">
       <li class="list-inline-item dropdown">
@@ -12,6 +13,7 @@
               <% elsif current_registration.user_type == "Cleaner" %>
             <%= link_to 'My Bookings', cleaners_bookings_path, class: "dropdown-item" %>
           <% end %>
+
           <%= link_to 'Log out', destroy_registration_session_path, method: :delete, class: "dropdown-item" %>
         </div>
       </li>
