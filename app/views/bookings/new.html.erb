@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Choose your options</h1>
+  <h2>Choose your options</h2>
   <%= simple_form_for @booking do |f| %>
   <%#= f.select(:service_id, Service.all.collect {|u| [u.name, u.id]}, :prompt => 'Select') %>
   <%= f.input :total_duration, collection: 2.step(by: 0.5, to: 15).to_a.map{|n| ["#{number_with_precision( n, strip_insignificant_zeros: true, precision: 2)} hours", n]} %>
