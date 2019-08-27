@@ -5,10 +5,10 @@
   <%= f.input :total_duration, collection: 2.step(by: 0.5, to: 15).to_a.map{|n| ["#{number_with_precision( n, strip_insignificant_zeros: true, precision: 2)} hours", n]} %>
 
 
+  <div class="box">
+    <input type="number" value="1">
+  </div>
 
-<div class="box">
-  <input type="number" value="1">
-</div>
 
 
   <div class="container">
