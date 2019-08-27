@@ -1,5 +1,7 @@
 <div class="container">
   <h5 style="text-align: center; margin: 0;">Payment</h5>
+
+  <br>
   <div class="card p-2">
     <div class="booking-description">
       <div>
@@ -17,8 +19,10 @@
 
 
     </div>
-    <br>
+
   </div>
+
+    <br>
         Total price: €<%= @booking.price_cents %>
   <div>
   <br>
@@ -47,6 +51,7 @@
 
 </div>
 <br>
-  <%= link_to "PAY NOW", booking_path(@booking), class: "btn btn-primary btn-block" %>
+
+  <%= link_to "PAY NOW", booking_path(@booking), class: "btn btn-main btn-block" %>
 </div>
 

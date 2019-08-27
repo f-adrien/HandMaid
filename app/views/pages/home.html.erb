@@ -4,10 +4,10 @@
 
 
 <div class="container" style="text-align:center">
-  <%= image_tag "banner-homepage.png", class: "image_banner" %>
-  <!-- <img src="/image/banner-homepage.png" alt=""> -->
-  <h3>Do your thing, chicken wing.</h3>
-  <p id="tagline">Book a cleaner now and do what you love with your time</p>
+    <%= image_tag "banner-homepage.png", class: "image_banner" %>
+    <!-- <img src="/image/banner-homepage.png" alt=""> -->
+    <h3>Do your thing, chicken wing.</h3>
+    <p id="tagline">Book a cleaner now and do what you love with your time</p>
 </div>
 
 
@@ -20,11 +20,8 @@
 
     <p>When</p>
     <%= text_field_tag :date, params[:date], as: :string, placeholder: "Pick date and time", class: "datepicker" %>
-
-    <%= submit_tag 'SEARCH', class: "btn btn-main" %>
-    <% end %>
-
-
   </div>
 
 </div>
+<%= submit_tag 'SEARCH', class: "btn btn-main" %>
+<% end %>
