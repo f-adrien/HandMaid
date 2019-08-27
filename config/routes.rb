@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [] do
     resources :booking_rejections, only: [:create]
-    end
+  end
 
   resources :services, except: [:show]
   resources :cleaners, only: [:edit, :update]
