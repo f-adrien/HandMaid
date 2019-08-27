@@ -1,0 +1,8 @@
+<li class="list-inline-item dropdown">
+  <%= image_tag "menu.png", class: "avatar-square dropdown-toggle", data: { toggle: "dropdown" } %>
+  <div class="dropdown-menu dropdown-menu-right">
+    <%= link_to "Register as client", edit_client_path(current_user), class: "dropdown-item" %>
+    <%= link_to "Register as cleaner", edit_cleaner_path(current_user), class: "dropdown-item" %>
+    <%= link_to 'Log in', new_registration_session_path %>
+  </div>
+</li>
