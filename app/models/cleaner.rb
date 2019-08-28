@@ -1,4 +1,5 @@
 class Cleaner < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
   has_many :bookings
   has_many :clients, through: :bookings
   has_many :booking_rejections

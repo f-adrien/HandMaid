@@ -10,7 +10,7 @@
   <!-- Display pending bookings in area -->
 
 
-  <h5 class="tags-bookings">PENDING BOOKINGS</h5>
+  <h5 class="tags-bookings">Pending bookings <i class="fas fa-clock"></i></h5>
   <% @bookings_near.each do |booking| %>
     <% if booking.cleaner_status == nil %>
     <div class="card-booking">
@@ -46,7 +46,7 @@
 
 
   <!-- Display current and past bookings -->
-  <h5 class="tags-bookings">CURRENT AND PAST BOOKINGS</h5>
+  <h5 class="tags-bookings">Current & past bookings <i class="fas fa-check-circle"></i></h5>
   <div class="card-booking">
     <% @bookings.each do |booking| %>
     <div class="card-content-up">
