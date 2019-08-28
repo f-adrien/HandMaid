@@ -7,6 +7,7 @@
     <br>
   <!-- Display pending bookings in area -->
 
+
   <h5 class="tags-bookings">PENDING BOOKINGS</h5>
   <% @bookings_near.each do |booking| %>
     <% if booking.cleaner_status == nil %>
@@ -30,11 +31,15 @@
       <h5><%= humanized_money_with_symbol(booking.price)%></h5>
     </div>
     <div class="card-booking-buttons">
+      <%= link_to 'Accept', confirm_booking_path(booking), method: :patch, action: :confirm_booking %>
+      <%= link_to 'Reject', booking_booking_rejections_path(booking), method: :post %>
       <%= link_to 'CANCEL', '/', class:'btn btn-ghost-card-booking' %>
     </div>
+
     <% end %>
 
     </div>
+
    <% end  %>
 
 
@@ -44,11 +49,13 @@
     <% @bookings.each do |booking| %>
     <div class="card-content-up">
       <ul class="list-inline">
+
         <li><strong>Booking ref. # <%= booking.id %></strong></li>
         <li><i class="fas fa-table"></i> <%= booking.date %></li>
         <li><i class="far fa-clock"></i> <%= minute_to_hours(booking.total_duration)%></li>
         <li><i class="fas fa-map-marker-alt"></i> <%= booking.address %></li>
         <% if booking.cleaner_status %>
+
         <li>Status: Confirmed <i class="fas fa-lock-open"></i></li>
         <% else %>
         <li>Status: Pending <i class="fas fa-lock"></i></li>
