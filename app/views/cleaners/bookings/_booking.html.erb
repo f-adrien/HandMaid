@@ -1,0 +1,32 @@
+<div class="booking-card">
+  <div class="card-content-up">
+    <ul class="list-inline">
+
+      <% if booking.status == "confirmed" %>
+        <li><strong>Booking ref. # <%= booking.id %></strong></li>
+      <% else %>
+        <li> <strong>New request near you !</strong></li>
+      <% end %>
+      <li><i class="fas fa-table"></i> <%= booking.date %></li>
+      <li><i class="far fa-clock"></i> <%= minute_to_hours(booking.total_duration)%></li>
+      <li><i class="fas fa-map-marker-alt"></i> <%= booking.address %></li>
+      <% if booking.status == "confirmed" %>
+
+      <li>Status: Confirmed <i class="fas fa-lock-open"></i></li>
+      <% else %>
+      <li>Status: Pending <i class="fas fa-lock"></i></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="card-content-down">
+    <h5>Total</h5>
+    <h5><%= humanized_money_with_symbol(booking.price)%></h5>
+  </div>
+  <div class="card-booking-buttons">
+      <% if booking.status == "pending"  %>
+        <%= link_to 'Accept', confirm_booking_path(booking), method: :patch, class: "booking-accept", remote: true %>
+        <%= link_to 'Reject', booking_booking_rejections_path(booking), method: :post, remote: true %>
+      <% end %>
+    <%= link_to 'CANCEL', '/', class:'btn btn-ghost-card-booking' %>
+  </div>
+</div>

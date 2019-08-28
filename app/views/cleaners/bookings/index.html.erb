@@ -11,61 +11,18 @@
 
 
   <h5 class="tags-bookings">PENDING BOOKINGS</h5>
+  <div class="container-pending">
   <% @bookings_display.each do |booking| %>
-  <div class="card-booking">
-    <div class="card-content-up">
-      <ul class="list-inline">
-        <li> <strong>New request near you !</strong></li>
-        <li><i class="fas fa-table"></i> <%= booking.date %></li>
-        <li><i class="far fa-clock"></i> <%= booking.total_duration%> hours</li>
-        <li><i class="fas fa-map-marker-alt"></i> <%= booking.address %></li>
-        <li><i class="fas fa-road"></i> <%= Geocoder::Calculations.distance_between(current_user.address, booking.address).round(2) %> kms </li>
-        <% if booking.status %>
-        <li>Status: Confirmed <i class="fas fa-lock-open"></i></li>
-        <% else %>
-        <li>Status: Pending <i class="fas fa-lock"></i></li>
-        <% end %>
-      </ul>
-    </div>
-    <div class="card-content-down">
-      <h5>Total</h5>
-      <h5><%= humanized_money_with_symbol(booking.price)%></h5>
-    </div>
-    <div class="card-booking-buttons">
-      <%= link_to 'Accept', confirm_booking_path(booking), method: :patch, action: :confirm_booking %>
-      <%= link_to 'Reject', booking_booking_rejections_path(booking), method: :post %>
-      <%= link_to 'CANCEL', '/', class:'btn btn-ghost-card-booking' %>
-    </div>
-  </div>
+    <%= render "cleaners/bookings/booking", booking: booking %>
   <% end  %>
+  </div>
 
 
   <!-- Display current and past bookings -->
   <h5 class="tags-bookings">CURRENT AND PAST BOOKINGS</h5>
-  <div class="card-booking">
+  <div class="container-confirmed">
     <% @bookings.each do |booking| %>
-    <div class="card-content-up">
-      <ul class="list-inline">
-
-        <li><strong>Booking ref. # <%= booking.id %></strong></li>
-        <li><i class="fas fa-table"></i> <%= booking.date %></li>
-        <li><i class="far fa-clock"></i> <%= minute_to_hours(booking.total_duration)%></li>
-        <li><i class="fas fa-map-marker-alt"></i> <%= booking.address %></li>
-        <% if booking.status %>
-
-        <li>Status: Confirmed <i class="fas fa-lock-open"></i></li>
-        <% else %>
-        <li>Status: Pending <i class="fas fa-lock"></i></li>
-        <% end %>
-      </ul>
-    </div>
-    <div class="card-content-down">
-      <h5>Total</h5>
-      <h5><%= humanized_money_with_symbol(booking.price)%></h5>
-    </div>
-    <div class="card-booking-buttons">
-      <%= link_to 'CANCEL', '/', class:'btn btn-ghost-card-booking' %>
-    </div>
+    <%= render "cleaners/bookings/booking", booking: booking %>
     <% end %>
   </div>
 </div>
