@@ -2,12 +2,15 @@
   border: #4100FF 1px solid;
   padding: 7px;
   text-align: center;
-  color: #4100FF;
-  background-color: white;
+  color: white;
+  background-color: #4100FF;
 }
 
 .card-booking {
-  padding: 10px;
+  padding: 15px;
+  ul > li {
+    line-height: 31px;
+  }
 }
 
 .banner-dashboard {
