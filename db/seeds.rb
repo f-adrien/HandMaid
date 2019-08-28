@@ -38,9 +38,9 @@ registration = Registration.create(email: "bobmarley@gmail.com", password: "pass
 Registration.create(email: "damianmarley@gmail.com", password: "password", user_id: 1, user_type: "Cleaner")
 puts "registrations created"
 
-puts "creating a booking"
+# puts "creating a booking"
 
-Booking.create(date: "", total_duration: 200, client_id: 1, cleaner_id: 1, price_cents: 50, address: "2 Avenue des Champs Elysées")
+# Booking.create(date: "", total_duration: 200, client_id: 1, cleaner_id: 1, price_cents: 50, address: "2 Avenue des Champs Elysées", status: "pending")
 
 
 puts "booking created"
