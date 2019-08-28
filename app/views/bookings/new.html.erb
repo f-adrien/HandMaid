@@ -2,14 +2,11 @@
   <h1>Choose your options</h1>
   <%= simple_form_for @booking do |f| %>
   <%#= f.select(:service_id, Service.all.collect {|u| [u.name, u.id]}, :prompt => 'Select') %>
-  <%= f.input :total_duration, collection: 2.step(by: 0.5, to: 15).to_a.map{|n| ["#{number_with_precision( n, strip_insignificant_zeros: true, precision: 2)} hours", n]} %>
-
-
-  <div class="box">
-    <input type="number" value="1">
+  <div class="d-flex">
+    <button id="js-minus-hours">-</button>
+    <%= f.input :total_duration, input_html: {value: 2} %>
+    <button id="js-plus-hours">+</button>
   </div>
-
-
 
   <div class="container">
     <div class="cards-service">
