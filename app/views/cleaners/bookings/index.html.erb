@@ -9,7 +9,7 @@
   <br>
   <!-- Display pending bookings in area -->
 
-  <h5 class="tags-bookings">Pending <i class="fas fa-hourglass-half"></h5>
+  <h5 class="tags-bookings">Pending <i class="fas fa-hourglass-half"></i></h5>
   <div class="container-pending">
   <% @bookings_display.each do |booking| %>
     <%= render "cleaners/bookings/booking", booking: booking %>
@@ -18,7 +18,7 @@
 
   <!-- Display current and past bookings -->
 
-  <h5 class="tags-bookings">Confirmed <i class="fas fa-check-circle"></h5>
+  <h5 class="tags-bookings">Confirmed <i class="fas fa-check-circle"></i></h5>
   <div class="container-confirmed">
     <% @bookings.each do |booking| %>
     <%= render "cleaners/bookings/booking", booking: booking %>
