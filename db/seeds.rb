@@ -21,6 +21,7 @@ Service.create(name: "Laundry")
 Service.create(name: "Ironing")
 Service.create(name: "Windows")
 Service.create(name: "Outdoors")
+Service.create(name: "Toilet")
 
 puts "Services created"
 
