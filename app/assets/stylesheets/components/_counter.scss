@@ -1,12 +1,31 @@
-.box {
-  transform: translate (-50%, -50%)
-
+.form-group.booking_total_duration {
+  margin: 0;
 }
 
-input {
+.hours-wrap {
+  padding: 0 24px;
+}
+
+.minus-icon {
+  border: none ;
+  background: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.plus-icon {
+  border: none ;
+  background: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.hours-input {
   border: none;
-  outline: none;
-  padding: 5px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,.5);
+  font-size: 48px;
+  padding: 0;
+  text-align: center;
 }
+

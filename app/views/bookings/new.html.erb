@@ -1,14 +1,14 @@
 <div class="container">
-  <h1>Choose your options</h1>
+  <!-- <h1>Choose your options</h1> -->
   <%= simple_form_for @booking do |f| %>
   <%#= f.select(:service_id, Service.all.collect {|u| [u.name, u.id]}, :prompt => 'Select') %>
-  <div class="d-flex">
-    <button id="js-minus-hours">-</button>
-    <%= f.input :total_duration, input_html: {value: 2} %>
-    <button id="js-plus-hours">+</button>
+  <div class="d-flex text-center justify-content-center hours-wrap">
+    <button id="js-minus-hours"><%= image_tag "icons8-minus-50.png", class: "minus-icon" %></i></button>
+    <%= f.input :total_duration, label: false, input_html: { value: 2, class: "hours-input" } %>
+    <button id="js-plus-hours"><%= image_tag "icons8-plus-50.png", class: "plus-icon" %></button>
   </div>
 
-  <div class="container">
+<!--   <div class="container">
     <div class="cards-service">
       <% @services.each do |service| %>
       <div class="card-service">
@@ -30,12 +30,12 @@
     </div>
     <br>
     <%= f.input :address%>
-  </div>
+  </div> -->
   <%#= f.input :date, as: :date, value: params[:date] %>
 
-  <input type="text" hidden value="<%= params[:date]%>" name="booking[date]">
+<!--   <input type="text" hidden value="<%= params[:date]%>" name="booking[date]">
   <div>
     <%= f.submit class:"btn btn-primary btn-block"%>
-  </div>
+  </div> -->
 </div>
 <% end %>
