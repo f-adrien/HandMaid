@@ -2,9 +2,9 @@ class RegistrationsController < Devise::RegistrationsController
 
   def create
     super
-    if params[:user_type] == "client"
+    if params[:user_type] == "Client"
       user = Client.create
-    elsif params[:user_type] == "cleaner"
+    elsif params[:user_type] == "Cleaner"
       user = Cleaner.create
     end
     @registration.user = user
