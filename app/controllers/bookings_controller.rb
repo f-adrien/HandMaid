@@ -26,8 +26,8 @@ class BookingsController < ApplicationController
       end
       redirect_to booking_payment_path(@booking)
     else
-      # render FORMCLEANER
-      redirect_to booking_payment_path(@booking)
+      redirect_to new_booking_path
+      # redirect_to booking_payment_path(@booking)
     end
   end
 
