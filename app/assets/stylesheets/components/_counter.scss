@@ -1,0 +1,33 @@
+.form-group.booking_total_duration {
+  margin: 0;
+}
+
+.hours-wrap {
+  padding: 0 45px;
+}
+
+.minus-icon {
+  border: none ;
+  width: 35px;
+  background: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.plus-icon {
+  width: 35px;
+  border: none ;
+  background: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.hours-input {
+  border: none;
+  font-size: 35px;
+  padding: 0;
+  text-align: center;
+}
+

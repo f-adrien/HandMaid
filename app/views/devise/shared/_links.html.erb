@@ -3,8 +3,6 @@
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-
-
   <%= link_to "Sign up as a client", new_registration_registration_path(user_type: "Client"), class: "btn btn-main" %> <%= link_to "Sign up as a cleaner", new_registration_registration_path(user_type: "Cleaner"), class: "btn btn-primary" %><br />
 <% end %>
 
