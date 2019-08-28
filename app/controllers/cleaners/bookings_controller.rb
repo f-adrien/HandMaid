@@ -19,7 +19,7 @@ class Cleaners::BookingsController < ApplicationController
     end
   end
 
-  def reject_booking
-    @booking = Booking.find(params[:id])
-  end
+  # def reject_booking
+  #   @booking = Booking.find(params[:id])
+  # end
 end

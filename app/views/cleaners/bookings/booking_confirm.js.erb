@@ -1,2 +1,14 @@
+
+function insertBookingCard(innerHTML) {
 const confirmedContainer = document.querySelector(".container-confirmed");
-confirmedContainer.insertAdjacentHTML("afterbegin", '<%= j render "cleaners/bookings/booking", booking: @booking %>');
+confirmedContainer.insertAdjacentHTML("afterbegin", innerHTML);
+}
+
+function removePendingCard(booking_id) {
+const pendingContainer = document.querySelector(`#booking-${booking_id}`);
+pendingContainer.remove();
+}
+
+
+insertBookingCard('<%= j render "cleaners/bookings/booking", booking: @booking %>')
+removePendingCard('<%= @booking.id %>')
