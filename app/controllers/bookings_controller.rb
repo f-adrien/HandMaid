@@ -3,7 +3,8 @@ class BookingsController < ApplicationController
   before_action :find_booking, only: [:show, :payment]
 
   def index
-    @bookings = current_user.bookings
+    @bookings_confirmed = current_user.bookings.where(status: "confirmed")
+    @bookings_pending = current_user.bookings.where(status: "pending")
   end
 
   def show
@@ -25,8 +26,8 @@ class BookingsController < ApplicationController
       end
       redirect_to booking_payment_path(@booking)
     else
-      # render FORMCLEANER
-      redirect_to booking_payment_path(@booking)
+      redirect_to new_booking_path
+      # redirect_to booking_payment_path(@booking)
     end
   end
 

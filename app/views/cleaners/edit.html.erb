@@ -10,6 +10,8 @@
   <%= f.input :address %>
   <%= f.input :radius, collection: 5..40, required: false %>
   <%= f.input :phone_number %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit "Submit", class: "btn-main" %>
   <% end %>
 </div>

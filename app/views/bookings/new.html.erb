@@ -7,8 +7,8 @@
     <%= f.input :total_duration, label: false, input_html: { value: 2, class: "hours-input", min: 0} %>
     <button id="js-plus-hours"><%= image_tag "icons8-plus-50.png", class: "plus-icon" %></button>
   </div>
+  <p style="margin: 0;">Pick services</p>
 
-<div class="container">
     <div class="cards-service">
       <% @services.each do |service| %>
       <div class="card-service">
@@ -30,12 +30,13 @@
     </div>
     <br>
     <%= f.input :address%>
-  </div>
+
   <%#= f.input :date, as: :date, value: params[:date] %>
 
 <input type="text" hidden value="<%= params[:date]%>" name="booking[date]">
   <div>
-    <%= f.submit class:"btn btn-primary btn-block"%>
+    <%= f.submit "BOOK", class:"btn btn-main btn-block"%>
   </div>
 </div>
 <% end %>
+<br>

@@ -12,13 +12,19 @@ Rails.application.routes.draw do
     resources :bookings, only: [:index, :show]
   end
 
+  resources :bookings, only: [] do
+    resources :booking_rejections, only: [:create]
+  end
+
   resources :services, except: [:show]
   resources :cleaners, only: [:edit, :update]
   resources :clients, only: [:edit, :update]
+
   # resources :requests, only: [:show, :edit, :update]
 
   get 'bookings/:id/payment', to: 'bookings#payment', as: :booking_payment
   get 'request', to: 'requests#show'
+  patch 'cleaner/bookings/:id/confirmed', to: 'cleaners/bookings#booking_confirm', as: :confirm_booking
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

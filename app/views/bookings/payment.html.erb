@@ -1,12 +1,11 @@
 <div class="container">
   <h5 style="text-align: center; margin: 0;">Payment</h5>
+
+  <br>
   <div class="card p-2">
     <div class="booking-description">
       <div>
-        Duration: <%= @booking.total_duration %> hours
-      </div>
-      <div>
-        <p style="margin: 0">Priorities:</p>
+        <p style="margin: 0">Services:</p>
         <% @booking.services.each do |service| %>
         <div class="priorities-payment">
           <%= show_svg("#{service.name}.svg")  %>
@@ -17,36 +16,53 @@
 
 
     </div>
-    <br>
+
   </div>
-        Total price: €<%= @booking.price_cents %>
+
+  <br>
   <div>
-  <br>
+    Duration: <%= @booking.total_duration %> hours
+  </div>
+  Total price: €<%= @booking.price_cents %>
+  <div>
+    <br>
 
-  <h6 style="margin: 0;">Payment Method</h6>
+    <h6 style="margin: 0;"><strong>Payment Method</strong></h6>
+    <br>
 
-  <div class="payment-icons">
-   <i class=" icon fab fa-cc-visa"></i>
-   <i class=" icon fab fa-cc-amex"></i>
-   <i class=" icon fab fa-cc-mastercard"></i>
+    <div class="payment-icons">
+     <i class=" icon fab fa-cc-visa"></i>
+     <i class=" icon fab fa-cc-amex"></i>
+     <i class=" icon fab fa-cc-mastercard"></i>
+   </div>
+
+   <br>
+   <div class="form-row">
+    <div class="col">
+      <input type="text" class="form-control col-auto" style="margin: 0px;" placeholder="Card Holder">
+    </div>
   </div>
   <br>
-<div class="payment">
-<div class="card-info">
-<i class="fas fa-credit-card"></i>
-</div>
-<br>
-<div class="iconspayment">
-  <i class="fas fa-calendar-alt"></i>
-</div>
-<br>
-<div class="iconspayment">
-  <i class="fas fa-lock"></i>
-</div>
-<br>
+  <div class="form-row">
+    <div class="col">
+      <input type="text" class="form-control col-auto" style="margin: 0px;" placeholder="Card number">
+    </div>
 
+  </div>
+  <form>
+    <br>
+
+    <div class="form-row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Expiration date">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="CVV">
+      </div>
+    </div>
+  </form>
+</div>
+<%= link_to "PAY NOW", booking_path(@booking), class: "btn btn-main btn-block" %>
 </div>
 <br>
-  <%= link_to "PAY NOW", booking_path(@booking), class: "btn btn-primary btn-block" %>
-</div>
 
