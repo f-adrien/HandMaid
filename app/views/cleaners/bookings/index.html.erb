@@ -9,7 +9,7 @@
   <br>
   <!-- Display pending bookings in area -->
 
-  <h5 class="tags-bookings">PENDING BOOKINGS</h5>
+  <h5 class="tags-bookings">Pending <i class="fas fa-hourglass-half"></i></h5>
   <% @bookings_display.each do |booking| %>
   <div class="card-booking">
     <div class="card-content-up">
@@ -27,20 +27,19 @@
       </ul>
     </div>
     <div class="card-content-down">
-      <h5>Total</h5>
+      <h5>Income</h5>
       <h5><%= humanized_money_with_symbol(booking.price)%></h5>
     </div>
     <div class="card-booking-buttons">
-      <%= link_to 'Accept', confirm_booking_path(booking), method: :patch, action: :confirm_booking %>
-      <%= link_to 'Reject', booking_booking_rejections_path(booking), method: :post %>
-      <%= link_to 'CANCEL', '/', class:'btn btn-ghost-card-booking' %>
+      <%= link_to 'Accept', confirm_booking_path(booking), class:'btn btn-primary-card-booking', method: :patch, action: :confirm_booking %>
+      <%= link_to 'Reject', booking_booking_rejections_path(booking), class:'btn btn-ghost-card-booking', method: :post %>
     </div>
   </div>
   <% end  %>
 
 
   <!-- Display current and past bookings -->
-  <h5 class="tags-bookings">Current & past bookings <i class="fas fa-check-circle"></i></h5>
+  <h5 class="tags-bookings">Confirmed <i class="fas fa-check-circle"></i></h5>
   <div class="card-booking">
     <% @bookings.each do |booking| %>
     <div class="card-content-up">
@@ -59,7 +58,7 @@
       </ul>
     </div>
     <div class="card-content-down">
-      <h5>Total</h5>
+      <h5>Income</h5>
       <h5><%= humanized_money_with_symbol(booking.price)%></h5>
     </div>
     <div class="card-booking-buttons">

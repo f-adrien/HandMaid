@@ -1,5 +1,7 @@
 .card-booking {
-  margin-top: 20px
+  margin: 20px 10px;
+  box-shadow: 1px 3px 15px -11px rgba(65,0,255,1);
+  border-radius: 10px;
 }
 
 .card-content-up {
@@ -10,6 +12,16 @@
   margin-top: 10px;
   display: flex;
   justify-content: space-between;
+}
+
+.photo-namecleaner {
+  display: flex;
+  align-items: center;
+  img {
+
+  margin-right: 10px;
+  }
+
 }
 
 
