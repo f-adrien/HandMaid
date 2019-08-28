@@ -1,19 +1,18 @@
 <div class="container">
     <div class="banner-dashboard" style="background-image: url(<%= image_path 'user-dashboard-bg.png' %>);">
-      <h1>Client Dashboard</h1>
+      <h1>Dashboard</h1>
     </div>
     <h3>Hi <%= current_user.first_name %>!</h3>
 
   <!-- Pending bookings -->
-
+<h5 class="tags-bookings">Pending bookings <i class="fas fa-clock"></i></h5>
   <div class="card-booking">
     <% @bookings_pending.each do |booking| %>
     <div class="card-content-up">
       <ul class="list-inline">
-        <li><i class="fas fa-info-circle"></i>Pending bookings</li>
-        <li>Date: <%= booking.date %></li>
-        <li>Duration: <%= minute_to_hours(booking.total_duration)%></li>
-        <li>Location: <%= booking.address %></li>
+        <li><i class="fas fa-table"></i> <%= booking.date %></li>
+        <li><i class="far fa-clock"></i> <%= minute_to_hours(booking.total_duration)%></li>
+        <li><i class="fas fa-map-marker-alt"></i> <%= booking.address %></li>
         <% if booking.status == "confirmed" %>
         <li>Status: Confirmed <i class="fas fa-lock-open"></i></li>
         <% else %>
@@ -28,19 +27,21 @@
     <div class="card-booking-buttons">
       <%= link_to 'CANCEL', '/', class:'btn btn-ghost-card-booking' %>
     </div>
+    <br>
+    <br>
     <% end %>
   </div>
 
 
   <!-- Confirmed bookings -->
-
+<h5 class="tags-bookings">Confirmed bookings <i class="fas fa-check-circle"></i></h5>
   <div class="card-booking">
     <% @bookings_confirmed.each do |booking| %>
     <div class="card-content-up">
       <ul class="list-inline">
         <li><i class="fas fa-info-circle"></i> Booking ref. # <%= booking.id %></li>
         <li>Your cleaner will be <strong><%= booking.cleaner.first_name %></strong></li>
-        <li>Date: <%= booking.date %></li>
+        <li><i class="fas fa-table"></i> <%= booking.date %></li>
         <li>Duration: <%= minute_to_hours(booking.total_duration)%></li>
         <li>Location: <%= booking.address %></li>
         <% if booking.status %>
@@ -57,6 +58,8 @@
     <div class="card-booking-buttons">
       <%= link_to 'CANCEL', '/', class:'btn btn-ghost-card-booking' %>
     </div>
+    <br>
+    <br>
     <% end %>
   </div>
 
