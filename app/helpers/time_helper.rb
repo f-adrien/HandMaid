@@ -5,8 +5,8 @@ module TimeHelper
     "#{hours}h#{rest}"
   end
 
-  def hours_to_minutes(hours)
-    minutes = hours * 60
-    return minutes
-  end
+  # def hours_to_minutes(hours)
+  #   minutes = hours * 60
+  #   return minutes
+  # end
 end
