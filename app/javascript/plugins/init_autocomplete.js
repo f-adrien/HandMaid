@@ -4,8 +4,8 @@ const initAutocomplete = () => {
   const addressInput = document.getElementById('booking_address');
   if (addressInput) {
     places({ container: addressInput });
-    console.log("Im working!")
   }
 };
+
 
 export { initAutocomplete };
