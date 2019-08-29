@@ -22,7 +22,6 @@ const subHours = (event) => {
 
 }
 
-
 // we add event listenter > upon click you execute the method
 const counter = () => {
   if (addHrsBtn) {
@@ -32,5 +31,7 @@ const counter = () => {
     subHrsBtn.addEventListener("click", subHours);
   };
 }
+
+
 
 export { counter }

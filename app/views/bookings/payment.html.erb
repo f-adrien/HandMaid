@@ -13,56 +13,57 @@
         </div>
         <% end %>
       </div>
-
-
     </div>
-
   </div>
 
   <br>
-  <div>
-    Duration: <%= @booking.total_duration %> hours
-  </div>
-  Total price: €<%= @booking.price_cents %>
-  <div>
-    <br>
-
-    <h6 style="margin: 0;"><strong>Payment Method</strong></h6>
-    <br>
-
-    <div class="payment-icons">
-     <i class=" icon fab fa-cc-visa"></i>
-     <i class=" icon fab fa-cc-amex"></i>
-     <i class=" icon fab fa-cc-mastercard"></i>
+  <div style="border: 1px solid rgba(0, 0, 0, 0.125); padding: 8px;">
+    <div>
+     <p>Cleaning duration: <%= @booking.total_duration %>h</p>
+     <p style="margin-bottom: 0;">Total price: €<%= @booking.price_cents / 100 %></p>
    </div>
+ </div>
+ <br>
 
-   <br>
-   <div class="form-row">
-    <div class="col">
-      <input type="text" class="form-control col-auto" style="margin: 0px;" placeholder="Card Holder">
-    </div>
+ <h6 style="margin: 0;"><strong>Payment Method</strong></h6>
+ <br>
+
+ <div class="payment-icons">
+   <i class=" icon fab fa-cc-visa"></i>
+   <i class=" icon fab fa-cc-amex"></i>
+   <i class=" icon fab fa-cc-mastercard"></i>
+ </div>
+
+ <br>
+ <div class="form-row">
+  <div class="col">
+    <input type="text" class="form-control col-auto" style="margin: 0px;" placeholder="Card Holder">
   </div>
+</div>
+<br>
+<div class="form-row">
+  <div class="col">
+    <input type="text" class="form-control col-auto" style="margin: 0px;" placeholder="Card number">
+  </div>
+
+</div>
+<form>
   <br>
+
   <div class="form-row">
     <div class="col">
-      <input type="text" class="form-control col-auto" style="margin: 0px;" placeholder="Card number">
+      <input type="text" class="form-control" placeholder="Expiration date">
     </div>
-
+    <div class="col">
+      <input type="text" class="form-control" placeholder="CVV">
+    </div>
   </div>
-  <form>
-    <br>
-
-    <div class="form-row">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="Expiration date">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="CVV">
-      </div>
-    </div>
-  </form>
+</form>
 </div>
-<%= link_to "PAY NOW", booking_path(@booking), class: "btn btn-main btn-block" %>
+<div class="container">
+<%= link_to "PAY NOW", bookings_path, class: "btn btn-main btn-block" %>
+
+</div>
 </div>
 <br>
 

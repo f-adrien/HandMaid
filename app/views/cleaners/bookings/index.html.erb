@@ -8,21 +8,8 @@
   <h3>Hi <%= current_user.first_name %>!</h3>
   <br>
   <!-- Display pending bookings in area -->
-
-  <h5 class="tags-bookings">Pending <i class="fas fa-hourglass-half"></i></h5>
-  <div class="container-pending">
-  <% @bookings_display.each do |booking| %>
-    <%= render "cleaners/bookings/booking", booking: booking %>
-  <% end  %>
-  </div>
-
-  <!-- Display current and past bookings -->
-
-  <h5 class="tags-bookings">Confirmed <i class="fas fa-check-circle"></i></h5>
-  <div class="container-confirmed">
-    <% @bookings.each do |booking| %>
-    <%= render "cleaners/bookings/booking", booking: booking %>
-    <% end %>
+  <div class="bookings-container">
+    <%= render "bookings", bookings_display: @bookings_display, bookings: @bookings %>
   </div>
 </div>
 <br>

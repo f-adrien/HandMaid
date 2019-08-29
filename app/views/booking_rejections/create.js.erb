@@ -1,0 +1,6 @@
+function rejectBooking(booking_id) {
+const pendingContainer = document.querySelector(`#booking-${booking_id}`);
+pendingContainer.remove();
+}
+
+rejectBooking('<%= @booking.id %>')
