@@ -5,14 +5,16 @@
   <h3>Hi <%= current_user.first_name %>!</h3>
   <br>
   <!-- Pending bookings -->
-  <h5 class="tags-bookings-pink">Pending <i class="fas fa-hourglass-half"></i></h5>
+  <% if @bookings_pending != [] %>
+  <h5 class="tags-bookings">Pending <i class="fas fa-hourglass-half"></i></h5>
+  <% end %>
   <% @bookings_pending.each do |booking| %>
   <div class="card-booking">
     <div class="card-content-up">
       <ul class="list-inline">
         <li><i class="fas fa-table"></i> <%= booking.date %></li>
         <li><i class="far fa-clock"></i> <%= booking.total_duration%>h</li>
-        <li><i class="fas fa-map-marker-alt"></i> <%= booking.address %></li>
+        <li><i class="fas fa-home"></i> <%= booking.address %></li>
         <% if booking.status == "confirmed" %>
         <li><i class="fas fa-lock-open"></i> Status: Confirmed</li>
         <% else %>
@@ -49,7 +51,7 @@
         <li><i class="fas fa-info-circle"></i> Booking ref. # <%= booking.id %></li>
         <li><i class="fas fa-table"></i> <%= booking.date %></li>
         <li><i class="far fa-clock"></i> <%= booking.total_duration%>h</li>
-        <li><i class="fas fa-map-marker-alt"></i> <%= booking.address %></li>
+        <li><i class="fas fa-home"></i> <%= booking.address %></li>
         <% if booking.status %>
         <li><i class="fas fa-lock-open"></i> Status: Confirmed</li>
         <% else %>
