@@ -29,7 +29,7 @@ puts "Services created"
 puts "creating 2 registrations"
 registration = Registration.create!(email: "barbara@gmail.com", password: "password", user_id: 1, user_type: "Client")
 Registration.create!(email: "thomas@gmail.com", password: "password", user_id: 1, user_type: "Cleaner")
-Registration.create!(email: "matthiss@gmail.com", password: "password", user_id: 2, user_type: "Cleaner")
+Registration.create!(email: "matthis@gmail.com", password: "password", user_id: 2, user_type: "Cleaner")
 puts "registrations created"
 
 puts "creating client"
@@ -37,8 +37,8 @@ Client.create!(first_name: "Barbara", last_name: "Peric", phone_number: "0606060
 puts "client created"
 
 puts "creating cleaner"
-Cleaner.create!(first_name: "Thomas", last_name: "Bonnet", availability: true, address: "35 rue Diderot, 75012 Paris", radius: 50, phone_number: "0606060606", remote_photo_url: "https://res.cloudinary.com/dszrivz3t/image/upload/v1567085434/thomas_pic_rmha1n.jpg")
-Cleaner.create!(first_name: "Matthis", last_name: "Parisot", availability: true, address: "15 Boulevard Suchetm 75016 Paris", radius: 50, phone_number: "0606060606", remote_photo_url: "https://res.cloudinary.com/dszrivz3t/image/upload/v1567085713/matthis_ed8n6a.jpg")
+Cleaner.create!(first_name: "Thomas", last_name: "Bonnet", availability: true, address: "35 Boulevard Diderot, Paris 12e Arrondissement, Île-de-France, France", radius: 50, phone_number: "0606060606", remote_photo_url: "https://res.cloudinary.com/dszrivz3t/image/upload/v1567085434/thomas_pic_rmha1n.jpg")
+Cleaner.create!(first_name: "Matthis", last_name: "Parisot", availability: true, address: "15 Boulevard Suchet, Paris 16e Arrondissement, Île-de-France, France", radius: 50, phone_number: "0606060606", remote_photo_url: "https://res.cloudinary.com/dszrivz3t/image/upload/v1567085713/matthis_ed8n6a.jpg")
 puts "cleaner created"
 
 
