@@ -6,7 +6,7 @@
   <br>
   <!-- Pending bookings -->
   <% if @bookings_pending != [] %>
-  <h5 class="tags-bookings">Pending <i class="fas fa-hourglass-half"></i></h5>
+  <h5 class="tags-bookings-pink">Pending <i class="fas fa-hourglass-half"></i></h5>
   <% end %>
   <% @bookings_pending.each do |booking| %>
   <div class="card-booking">
@@ -45,7 +45,7 @@
           <% else %>
           <%= cl_image_tag booking.cleaner.photo, class: "avatar" %>
           <% end %>
-          <li><strong><%= booking.cleaner.first_name %></strong></li>
+          <li><strong><%= booking.cleaner.first_name %></strong> is coming!</li>
         </div>
         <br>
         <li><i class="fas fa-info-circle"></i> Booking ref. # <%= booking.id %></li>
