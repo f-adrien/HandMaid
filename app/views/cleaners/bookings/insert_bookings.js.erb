@@ -1,0 +1,7 @@
+
+function insertBookingContainer(containerHTML) {
+  const container = document.querySelector(".bookings-container");
+  container.innerHTML = containerHTML;
+}
+
+insertBookingContainer('<%= j render "cleaners/bookings/bookings", bookings: @bookings, bookings_display: @bookings_display %>')

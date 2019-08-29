@@ -5,7 +5,9 @@
   <h3>Hi <%= current_user.first_name %>!</h3>
   <br>
   <!-- Pending bookings -->
+  <% if @bookings_pending != [] %>
   <h5 class="tags-bookings">Pending <i class="fas fa-hourglass-half"></i></h5>
+  <% end %>
   <% @bookings_pending.each do |booking| %>
   <div class="card-booking">
     <div class="card-content-up">

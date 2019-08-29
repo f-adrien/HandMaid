@@ -25,7 +25,7 @@
   <div class="card-booking-buttons">
       <% if booking.status == "pending"  %>
         <%= link_to 'Accept', confirm_booking_path(booking), method: :patch, class: "booking-accept btn btn-primary-card-booking", remote: true %>
-        <%= link_to 'Reject', booking_booking_rejections_path(booking), method: :post, class: "btn btn-ghost-card-booking", remote: true %>
+        <%= link_to 'Reject', reject_booking_path(booking), method: :post, class: "btn btn-ghost-card-booking", remote: true %>
       <% end %>
   </div>
 </div>

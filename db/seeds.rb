@@ -27,7 +27,7 @@ puts "Services created"
 
 
 puts "creating client"
-Client.create(first_name: "Bob", last_name: "Marley", phone_number: "0606060606", address: "2 Avenue des Champs Elysées")
+Client.create(first_name: "Barbara", last_name: "Peric", phone_number: "0606060606", address: "2 Avenue des Champs Elysées")
 puts "client created"
 
 puts "creating cleaner"
@@ -35,7 +35,7 @@ Cleaner.create(first_name: "Damian", last_name: "Marley", availability: true, ad
 puts "cleaner created"
 
 puts "creating 2 registrations"
-registration = Registration.create(email: "bobmarley@gmail.com", password: "password", user_id: 1, user_type: "Client")
+registration = Registration.create(email: "barbara@gmail.com", password: "password", user_id: 1, user_type: "Client")
 Registration.create(email: "damianmarley@gmail.com", password: "password", user_id: 1, user_type: "Cleaner")
 puts "registrations created"
 
