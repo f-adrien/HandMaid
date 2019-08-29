@@ -35,14 +35,17 @@
 
   <!-- Confirmed bookings -->
   <h5 class="tags-bookings">Confirmed <i class="fas fa-check-circle"></i></h5>
-    <% @bookings_confirmed.each do |booking| %>
+  <% @bookings_confirmed.each do |booking| %>
   <div class="card-booking">
     <div class="card-content-up">
       <ul class="list-inline">
         <div class="photo-namecleaner">
+          <% if booking.cleaner.photo.url ==  nil %>
+          <%= image_tag "default-avatar.png", class: "avatar" %>
+          <% else %>
           <%= cl_image_tag booking.cleaner.photo, class: "avatar" %>
+          <% end %>
           <li><strong><%= booking.cleaner.first_name %></strong></li>
-
         </div>
         <br>
         <li><i class="fas fa-info-circle"></i> Booking ref. # <%= booking.id %></li>

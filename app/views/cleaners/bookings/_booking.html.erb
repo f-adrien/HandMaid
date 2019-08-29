@@ -20,8 +20,8 @@
     </ul>
   </div>
   <div class="card-content-down">
-    <h5>Total</h5>
-    <h5><%= humanized_money_with_symbol(booking.price)%></h5>
+    <h5>Income</h5>
+    <h5>€<%= (booking.price.to_i - 8)%></h5>
   </div>
   <div class="card-booking-buttons">
       <% if booking.status == "pending"  %>
