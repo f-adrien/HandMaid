@@ -10,7 +10,7 @@
   border: none ;
   width: 35px;
   background: none;
-  &:focus {
+  &:focus { //this is to remove the field around the icon
     outline: none;
   }
 }
@@ -19,7 +19,7 @@
   width: 35px;
   border: none ;
   background: none;
-  &:focus {
+  &:focus { //this is to remove the field around the icon
     outline: none;
   }
 }
