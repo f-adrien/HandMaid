@@ -1,0 +1,5 @@
+meta_product_name: "HandMaid"
+meta_title: "HandMaid - Do your thing, chicken wing"
+meta_description: "Book a cleaner now and do what you love with your time"
+meta_image: "banner-homepage.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
