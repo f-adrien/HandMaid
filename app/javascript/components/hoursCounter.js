@@ -8,10 +8,10 @@ const addHours = (event) => {
   formInput.value = parseInt(formInput.value) + 1
 }
 
-const subHours = (event) => {
-  event.preventDefault()
-  formInput.value = parseInt(formInput.value) - 1
-}
+  const subHours = (event) => {
+    event.preventDefault()
+    formInput.value = parseInt(formInput.value) - 1
+  }
 
 const counter = () => {
   if (addHrsBtn) {
@@ -21,5 +21,7 @@ const counter = () => {
     subHrsBtn.addEventListener("click", subHours);
   };
 }
+
+
 
 export { counter }

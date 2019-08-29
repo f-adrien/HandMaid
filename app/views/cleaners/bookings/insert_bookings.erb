@@ -1,0 +1,23 @@
+
+function insertBookingContainer(containerHTML) {
+  const container = document.querySelector(".bookings-container");
+  container.innerHTML = containerHTML;
+}
+
+// function removePendingCard(booking_id) {
+// const pendingContainer = document.querySelector(`#booking-${booking_id}`);
+// pendingContainer.remove();
+// }
+
+// function removePendingTitle() {
+//   const pendingTitle = document.querySelector(".pending-title")
+//   const bookings_display = '<%= @bookings_display %>'
+//   <% if @bookings_display.empty? %>
+//     pendingTitle.remove()
+//   <% end %>
+// }
+
+// insertBookingCard('<%= j render "cleaners/bookings/booking", booking: @booking %>')
+// removePendingCard('<%= @booking.id %>')
+// removePendingTitle()
+insertBookingContainer('<%= j render "cleaners/bookings/bookings", bookings: @bookings, bookings_display: @bookings_display %>')
