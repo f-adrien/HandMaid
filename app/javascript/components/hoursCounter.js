@@ -5,7 +5,6 @@ const formInput = document.querySelector("#booking_total_duration");
 
 const addHours = (event) => {
   event.preventDefault()
-  console.log("hello");
   formInput.value = parseInt(formInput.value) + 1
 }
 
@@ -15,11 +14,12 @@ const subHours = (event) => {
 }
 
 const counter = () => {
-  addHrsBtn.addEventListener("click", addHours);
-  subHrsBtn.addEventListener("click", subHours);
+  if (addHrsBtn) {
+    addHrsBtn.addEventListener("click", addHours);
+  };
+  if (subHrsBtn) {
+    subHrsBtn.addEventListener("click", subHours);
+  };
 }
 
 export { counter }
-
-
-
