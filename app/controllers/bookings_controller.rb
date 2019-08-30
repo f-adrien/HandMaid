@@ -3,8 +3,8 @@ class BookingsController < ApplicationController
   before_action :find_booking, only: [:show, :payment]
 
   def index
-    @bookings_confirmed = current_user.bookings.where(status: "confirmed")
-    @bookings_pending = current_user.bookings.where(status: "pending")
+    @bookings_confirmed = current_user.bookings.where(status: "confirmed").order(:date).reverse
+    @bookings_pending = current_user.bookings.where(status: "pending").order(:date).reverse
   end
 
   def show
